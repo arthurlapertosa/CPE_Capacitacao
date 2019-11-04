@@ -10,6 +10,17 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://arthurlapertosa:cpejr123@cluster0-a0kww.mongodb.net/test?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+mongoose.connection.on('error', console.error.bind(console, 'connection error'));
+mongoose.connection.once('open', () => {
+  console.log('database connect!');
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
