@@ -22,8 +22,16 @@ router.post('/product', function(req, res, next) {
   }).catch(err =>{
     console.log(err);
   });
-  
+
   res.redirect('/product');
+});
+
+router.get('/allProducts', function(req, res, next) {
+  Product.getAll().then((products) =>{
+    res.render('allProducts', { title: 'product', products });
+  }).catch(err =>{
+    res.redirect('/product');
+  });
 });
 
 module.exports = router;

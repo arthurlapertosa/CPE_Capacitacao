@@ -31,7 +31,17 @@ class Product {
             ProductModel.updateById(product, id).then((result)=>{
                 resolve (result);
             }).catch(err => {
-                
+                reject(err);
+            })
+        })
+    }
+
+    static getAll(){
+        return new Promise((resolve, reject) => {
+            ProductModel.find({}).then((results)=>{
+                resolve (results);
+            }).catch(err => {
+                reject(err);
             })
         })
     }
