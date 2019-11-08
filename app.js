@@ -12,7 +12,7 @@ var app = express();
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://arthurlapertosa:cpejr123@cluster0-a0kww.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://arthurlapertosa:3DKzj8v@zdyg@VV@cluster0-a0kww.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
