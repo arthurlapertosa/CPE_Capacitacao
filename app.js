@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -12,7 +14,7 @@ var app = express();
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://arthurlapertosa:3DKzj8v@zdyg@VV@cluster0-a0kww.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://arthurlapertosa:${process.env.MONGO_PASSWORD}@cluster0-a0kww.mongodb.net/test?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
